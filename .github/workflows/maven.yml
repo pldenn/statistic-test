@@ -1,13 +1,14 @@
+
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Java CI with Maven # как называется workflow
-on: #  когда срабатывает (на push)
-push:
-  branches: [ master ]
-pull_request:
-  branches: [ master ]
 
+on: # когда срабатывает (на push)
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs: # какие задачи делаем
   build: # сборка
@@ -21,5 +22,4 @@ jobs: # какие задачи делаем
         with:
           java-version: 11 # версия для установки
       - name: Build with Maven
-         run: mvn -B package --file pom.xml # запускаем Maven
-
+        run: mvn -B package --file pom.xml # запускаем Maven
